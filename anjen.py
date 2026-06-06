@@ -848,13 +848,8 @@ jawab16 = st.radio(
 
 # Soal 17
 jawab17 = st.radio(
-    "17. Filtrat adalah ...",
-    [
-        "Larutan yang lolos dari penyaringan",
-        "Endapan hasil reaksi",
-        "Pereaksi",
-        "Sampel awal"
-    ],
+    "17. Larutan yang lolos dari proses penyaringan disebut ...",
+    ["Filtrat", "Presipitat", "Endapan", "Pereaksi"],
     key="s17"
 )
 
@@ -874,47 +869,42 @@ jawab19 = st.radio(
 
 # Soal 20
 jawab20 = st.radio(
-    "20. Aplikasi ini dibuat untuk membantu pengguna memahami ...",
-    [
-        "Proses identifikasi ion",
-        "Sintesis senyawa organik",
-        "Penentuan kadar air",
-        "Pembuatan larutan baku"
-    ],
+    "20. Kation yang terdapat dalam golongan I selain Ag⁺ adalah ...",
+    ["Pb²⁺ dan Hg₂²⁺", "Fe³⁺ dan Al³⁺", "Ba²⁺ dan Ca²⁺", "Zn²⁺ dan Ni²⁺"],
     key="s20"
 )
 
 if st.button("Lihat Hasil"):
 
     if jawab1 == "HCl":
-        skor += 10
+        skor += 5
 
     if jawab2 == "Ag⁺":
-        skor += 10
+        skor += 5
 
     if jawab3 == "Putih":
-        skor += 10
+        skor += 5
 
     if jawab4 == "III":
-        skor += 10
+        skor += 5
 
     if jawab5 == "NH₄OH":
-        skor += 10
+        skor += 5
 
     if jawab6 == "Ca²⁺":
-        skor += 10
+        skor += 5
 
     if jawab7 == "AgNO₃":
-        skor += 10
+        skor += 5
 
     if jawab8 == "CO₃²⁻":
-        skor += 10
+        skor += 5
 
     if jawab9 == "BaCl₂":
-        skor += 10
+        skor += 5
 
     if jawab10 == "SO₄²⁻":
-        skor += 10
+        skor += 5
 
     if jawab11 == "Negatif":
         skor += 5
@@ -934,7 +924,7 @@ if st.button("Lihat Hasil"):
     if jawab16 == "Presipitat":
         skor += 5
 
-    if jawab17 == "Larutan yang lolos dari penyaringan":
+    if jawab17 == "Filtrat":
         skor += 5
 
     if jawab18 == "K₂CrO₄":
@@ -943,15 +933,15 @@ if st.button("Lihat Hasil"):
     if jawab19 == "I⁻":
         skor += 5
 
-    if jawab20 == "Proses identifikasi ion":
+    if jawab20 == "Pb²⁺ dan Hg₂²⁺":
         skor += 5
+
     st.success(f"Skor Anda: {skor}/100")
 
     if skor >= 80:
         st.balloons()
-        st.write("Sangat Baik! Pemahaman Anda sudah sangat baik.")
+        st.write("🎉 Sangat Baik! Pemahaman Anda sudah sangat baik.")
     elif skor >= 60:
-        st.write("Baik! Tetap semangat belajar.")
+        st.write("👍 Baik! Tetap semangat belajar.")
     else:
-        st.write("Perlu belajar lagi agar lebih memahami materi.")
-        
+        st.write("📚 Pelajari kembali materi kation dan anion agar lebih memahami konsepnya.")
