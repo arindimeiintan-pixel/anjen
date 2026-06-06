@@ -723,113 +723,235 @@ elif golongan == "Golongan V":
     - Sr²⁺ menggunakan CH₃COOH dan Na₂CO₃
     - Ca²⁺ menggunakan H₂C₂O₄ dan NH₄OH
     """)
-elif menu == "Kuis":
+import streamlit as st
 
-    st.header("📝 Kuis Pemisahan Kation dan Anion")
+st.title("📝 Kuis Kation dan Anion")
 
-    skor = 0
+skor = 0
 
-    soal = {
-        "1. Pereaksi yang digunakan untuk mengendapkan kation golongan I adalah ...":
-        ("HCl", ["HCl", "NH₄OH", "BaCl₂", "KI"]),
+# Soal 1
+jawab1 = st.radio(
+    "1. Pereaksi yang digunakan untuk mengendapkan kation golongan I adalah ...",
+    ["NH₄OH", "HCl", "BaCl₂", "H₂SO₄"],
+    key="s1"
+)
 
-        "2. Ion yang termasuk golongan I adalah ...":
-        ("Ag⁺", ["Ag⁺", "Fe³⁺", "Ca²⁺", "Ba²⁺"]),
+# Soal 2
+jawab2 = st.radio(
+    "2. Ion yang termasuk golongan I adalah ...",
+    ["Fe³⁺", "Ag⁺", "Ba²⁺", "Ca²⁺"],
+    key="s2"
+)
 
-        "3. Endapan AgCl berwarna ...":
-        ("Putih", ["Putih", "Kuning", "Merah", "Hijau"]),
+# Soal 3
+jawab3 = st.radio(
+    "3. Endapan AgCl berwarna ...",
+    ["Merah", "Kuning", "Putih", "Hijau"],
+    key="s3"
+)
 
-        "4. Kation Pb²⁺ termasuk golongan ...":
-        ("I", ["I", "II", "III", "V"]),
+# Soal 4
+jawab4 = st.radio(
+    "4. Kation Al³⁺ termasuk golongan ...",
+    ["I", "II", "III", "V"],
+    key="s4"
+)
 
-        "5. Kation yang termasuk golongan III adalah ...":
-        ("Fe³⁺", ["Fe³⁺", "Ag⁺", "Ba²⁺", "Pb²⁺"]),
+# Soal 5
+jawab5 = st.radio(
+    "5. Pereaksi yang digunakan untuk mengendapkan Al³⁺ dan Fe³⁺ adalah ...",
+    ["NH₄OH", "HCl", "BaCl₂", "KI"],
+    key="s5"
+)
 
-        "6. Pereaksi untuk mengendapkan Al³⁺ dan Fe³⁺ adalah ...":
-        ("NH₄OH", ["NH₄OH", "HCl", "KI", "AgNO₃"]),
+# Soal 6
+jawab6 = st.radio(
+    "6. Kation yang termasuk golongan V adalah ...",
+    ["Ag⁺", "Pb²⁺", "Ca²⁺", "Fe³⁺"],
+    key="s6"
+)
 
-        "7. Endapan Fe(OH)₃ berwarna ...":
-        ("Coklat kemerahan", ["Coklat kemerahan", "Putih", "Kuning", "Hitam"]),
+# Soal 7
+jawab7 = st.radio(
+    "7. Pereaksi untuk identifikasi ion klorida (Cl⁻) adalah ...",
+    ["AgNO₃", "NaOH", "NH₄OH", "K₂CrO₄"],
+    key="s7"
+)
 
-        "8. Kation yang termasuk golongan V adalah ...":
-        ("Ca²⁺", ["Ca²⁺", "Ag⁺", "Fe³⁺", "Hg₂²⁺"]),
+# Soal 8
+jawab8 = st.radio(
+    "8. Anion yang menghasilkan gas CO₂ saat direaksikan dengan asam adalah ...",
+    ["Cl⁻", "I⁻", "CO₃²⁻", "SO₄²⁻"],
+    key="s8"
+)
 
-        "9. Ion Ba²⁺ dapat diidentifikasi menggunakan ...":
-        ("K₂CrO₄", ["K₂CrO₄", "AgNO₃", "NH₄OH", "KI"]),
+# Soal 9
+jawab9 = st.radio(
+    "9. Pereaksi untuk identifikasi ion sulfat adalah ...",
+    ["AgNO₃", "BaCl₂", "KI", "NH₄OH"],
+    key="s9"
+)
 
-        "10. Tujuan pemisahan kation ke dalam golongan adalah ...":
-        ("Mempermudah identifikasi ion",
-         ["Mempermudah identifikasi ion",
-          "Menambah jumlah ion",
-          "Mengubah warna ion",
-          "Menghilangkan larutan"]),
+# Soal 10
+jawab10 = st.radio(
+    "10. Ion yang menghasilkan endapan putih dengan BaCl₂ adalah ...",
+    ["SO₄²⁻", "Cl⁻", "I⁻", "NO₃⁻"],
+    key="s10"
+)
 
-        "11. Anion merupakan ion bermuatan ...":
-        ("Negatif", ["Negatif", "Positif", "Netral", "Tidak bermuatan"]),
+# Soal 11
+jawab11 = st.radio(
+    "11. Anion merupakan ion yang bermuatan ...",
+    ["Positif", "Negatif", "Netral", "Tidak bermuatan"],
+    key="s11"
+)
 
-        "12. Pereaksi identifikasi ion klorida adalah ...":
-        ("AgNO₃", ["AgNO₃", "NH₄OH", "HCl", "NaOH"]),
+# Soal 12
+jawab12 = st.radio(
+    "12. Rumus ion klorida adalah ...",
+    ["Cl⁻", "I⁻", "SO₄²⁻", "CO₃²⁻"],
+    key="s12"
+)
 
-        "13. Ion Cl⁻ dengan AgNO₃ menghasilkan ...":
-        ("Endapan putih",
-         ["Endapan putih", "Endapan merah", "Gas", "Larutan biru"]),
+# Soal 13
+jawab13 = st.radio(
+    "13. Ion Ba²⁺ termasuk ke dalam golongan ...",
+    ["I", "II", "III", "V"],
+    key="s13"
+)
 
-        "14. Anion yang menghasilkan gas CO₂ adalah ...":
-        ("CO₃²⁻", ["CO₃²⁻", "Cl⁻", "SO₄²⁻", "I⁻"]),
+# Soal 14
+jawab14 = st.radio(
+    "14. Endapan Fe(OH)₃ terbentuk dari ion ...",
+    ["Ag⁺", "Fe³⁺", "Pb²⁺", "Ca²⁺"],
+    key="s14"
+)
 
-        "15. Pereaksi identifikasi ion sulfat adalah ...":
-        ("BaCl₂", ["BaCl₂", "AgNO₃", "KI", "NH₄OH"]),
+# Soal 15
+jawab15 = st.radio(
+    "15. Tujuan pemisahan kation ke dalam beberapa golongan adalah ...",
+    [
+        "Mempermudah identifikasi ion",
+        "Menambah jumlah ion",
+        "Mengubah warna ion",
+        "Menghilangkan larutan"
+    ],
+    key="s15"
+)
 
-        "16. Ion sulfat dengan BaCl₂ menghasilkan ...":
-        ("Endapan putih",
-         ["Endapan putih", "Endapan kuning", "Endapan hitam", "Gas"]),
+# Soal 16
+jawab16 = st.radio(
+    "16. Endapan hasil reaksi disebut ...",
+    ["Filtrat", "Presipitat", "Pelarut", "Larutan"],
+    key="s16"
+)
 
-        "17. Rumus ion iodida adalah ...":
-        ("I⁻", ["I⁻", "Cl⁻", "SO₄²⁻", "CO₃²⁻"]),
+# Soal 17
+jawab17 = st.radio(
+    "17. Filtrat adalah ...",
+    [
+        "Larutan yang lolos dari penyaringan",
+        "Endapan hasil reaksi",
+        "Pereaksi",
+        "Sampel awal"
+    ],
+    key="s17"
+)
 
-        "18. Filtrat adalah ...":
-        ("Larutan yang lolos dari penyaringan",
-         ["Larutan yang lolos dari penyaringan",
-          "Endapan hasil reaksi",
-          "Pereaksi",
-          "Sampel awal"]),
+# Soal 18
+jawab18 = st.radio(
+    "18. Pereaksi yang digunakan untuk mengidentifikasi ion Ba²⁺ adalah ...",
+    ["K₂CrO₄", "AgNO₃", "KI", "NH₄OH"],
+    key="s18"
+)
 
-        "19. Endapan hasil reaksi disebut ...":
-        ("Presipitat",
-         ["Presipitat", "Filtrat", "Pelarut", "Larutan induk"]),
+# Soal 19
+jawab19 = st.radio(
+    "19. Ion iodida memiliki rumus ...",
+    ["Cl⁻", "I⁻", "CO₃²⁻", "SO₄²⁻"],
+    key="s19"
+)
 
-        "20. Tujuan aplikasi ini adalah ...":
-        ("Membantu memahami proses identifikasi ion",
-         ["Membantu memahami proses identifikasi ion",
-          "Menggantikan praktikum",
-          "Mengukur massa",
-          "Menentukan kadar zat"])
-    }
+# Soal 20
+jawab20 = st.radio(
+    "20. Aplikasi ini dibuat untuk membantu pengguna memahami ...",
+    [
+        "Proses identifikasi ion",
+        "Sintesis senyawa organik",
+        "Penentuan kadar air",
+        "Pembuatan larutan baku"
+    ],
+    key="s20"
+)
 
-    jawaban_user = {}
+if st.button("Lihat Hasil"):
 
-    for nomor, (pertanyaan, data) in enumerate(soal.items(), start=1):
-        jawaban_benar, pilihan = data
-        jawaban_user[pertanyaan] = st.radio(
-            pertanyaan,
-            pilihan,
-            key=nomor
-        )
+    if jawab1 == "HCl":
+        skor += 10
 
-    if st.button("Lihat Skor"):
+    if jawab2 == "Ag⁺":
+        skor += 10
 
-        for pertanyaan, data in soal.items():
-            jawaban_benar, pilihan = data
+    if jawab3 == "Putih":
+        skor += 10
 
-            if jawaban_user[pertanyaan] == jawaban_benar:
-                skor += 5
+    if jawab4 == "III":
+        skor += 10
 
-        st.success(f"Skor Anda: {skor}/100")
+    if jawab5 == "NH₄OH":
+        skor += 10
 
-        if skor >= 80:
-            st.balloons()
-            st.write("🎉 Sangat Baik! Pemahaman Anda sudah sangat baik.")
-        elif skor >= 60:
-            st.write("👍 Baik! Tetap semangat belajar.")
-        else:
-            st.write("📚 Pelajari kembali materi agar lebih memahami konsep kation dan anion.")
+    if jawab6 == "Ca²⁺":
+        skor += 10
+
+    if jawab7 == "AgNO₃":
+        skor += 10
+
+    if jawab8 == "CO₃²⁻":
+        skor += 10
+
+    if jawab9 == "BaCl₂":
+        skor += 10
+
+    if jawab10 == "SO₄²⁻":
+        skor += 10
+
+    if jawab11 == "Negatif":
+        skor += 5
+
+    if jawab12 == "Cl⁻":
+        skor += 5
+
+    if jawab13 == "V":
+        skor += 5
+
+    if jawab14 == "Fe³⁺":
+        skor += 5
+
+    if jawab15 == "Mempermudah identifikasi ion":
+        skor += 5
+
+    if jawab16 == "Presipitat":
+        skor += 5
+
+    if jawab17 == "Larutan yang lolos dari penyaringan":
+        skor += 5
+
+    if jawab18 == "K₂CrO₄":
+        skor += 5
+
+    if jawab19 == "I⁻":
+        skor += 5
+
+    if jawab20 == "Proses identifikasi ion":
+        skor += 5
+    st.success(f"Skor Anda: {skor}/100")
+
+    if skor >= 80:
+        st.balloons()
+        st.write("Sangat Baik! Pemahaman Anda sudah sangat baik.")
+    elif skor >= 60:
+        st.write("Baik! Tetap semangat belajar.")
+    else:
+        st.write("Perlu belajar lagi agar lebih memahami materi.")
+        
