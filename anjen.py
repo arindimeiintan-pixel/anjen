@@ -647,3 +647,79 @@ elif materi == "Anion":
     - CO₃²⁻ (Karbonat)
     - SO₄²⁻ (Sulfat)
     """)
+    import streamlit as st
+
+st.title("🧪 Golongan Kation")
+
+golongan = st.selectbox(
+    "Pilih Golongan Kation",
+    [
+        "Golongan I",
+        "Golongan II",
+        "Golongan III",
+        "Golongan IV",
+        "Golongan V"
+    ]
+)
+
+if golongan == "Golongan I":
+
+    st.header("Golongan I")
+
+    st.write("Pereaksi : HCl encer")
+
+    st.markdown("""
+    **Kation:**
+    - Ag⁺
+    - Pb²⁺
+    - Hg₂²⁺
+
+    **Endapan yang terbentuk:**
+    - AgCl
+    - PbCl₂
+    - Hg₂Cl₂
+    """)
+
+elif golongan == "Golongan II":
+
+    st.header("Golongan II")
+
+    st.write("Pada skema praktikum ini tidak digunakan kation golongan II.")
+
+elif golongan == "Golongan III":
+
+    st.header("Golongan III")
+
+    st.write("Pereaksi : NH₄OH")
+
+    st.markdown("""
+    **Kation:**
+    - Al³⁺
+    - Fe³⁺
+
+    **Endapan yang terbentuk:**
+    - Al(OH)₃
+    - Fe(OH)₃
+    """)
+
+elif golongan == "Golongan IV":
+
+    st.header("Golongan IV")
+
+    st.write("Pada skema praktikum ini tidak digunakan kation golongan IV.")
+
+elif golongan == "Golongan V":
+
+    st.header("Golongan V")
+
+    st.markdown("""
+    **Kation:**
+    - Ba²⁺
+    - Sr²⁺
+    - Ca²⁺
+
+    **Identifikasi:**
+    - Ba²⁺ menggunakan K₂CrO₄
+    - Sr²⁺ menggunakan CH₃COOH dan Na₂CO₃
+    - Ca²⁺ menggunakan H₂C₂O₄ dan NH₄OH
+    """)
