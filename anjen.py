@@ -1063,3 +1063,141 @@ elif ion == "Ca²⁺":
     with st.expander("Pereaksi Spesifik"):
         st.write("H₂C₂O₄")
         st.write("Membentuk CaC₂O₄ putih.")
+
+        import streamlit as st
+
+st.title("🧪 Simulasi Pemisahan Kation Golongan I-V")
+
+st.subheader("Campuran Kation")
+st.info("Ag⁺, Pb²⁺, Hg₂²⁺, Al³⁺, Fe³⁺, Ba²⁺, Sr²⁺, Ca²⁺")
+
+st.markdown("### ➜ Tambahkan HCl Encer")
+
+if st.button("Lihat Hasil HCl"):
+
+    st.success("Terbentuk Endapan Golongan I")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### Golongan I")
+        st.write("Ag⁺")
+        st.write("Pb²⁺")
+        st.write("Hg₂²⁺")
+
+    with col2:
+        st.markdown("### Filtrat")
+        st.write("Al³⁺")
+        st.write("Fe³⁺")
+        st.write("Ba²⁺")
+        st.write("Sr²⁺")
+        st.write("Ca²⁺")
+
+    pilihan1 = st.selectbox(
+        "Pilih Ion Golongan I",
+        ["Ag⁺", "Pb²⁺", "Hg₂²⁺"]
+    )
+
+    if pilihan1 == "Ag⁺":
+        st.info("""
+Pereaksi Golongan : HCl
+
+Pereaksi Spesifik : NH₄OH
+
+Konfirmasi : HNO₃
+
+Hasil : AgCl putih
+""")
+
+    elif pilihan1 == "Pb²⁺":
+        st.info("""
+Pereaksi Golongan : HCl
+
+Pereaksi Spesifik : K₂CrO₄
+
+Hasil : PbCrO₄ kuning
+""")
+
+    elif pilihan1 == "Hg₂²⁺":
+        st.info("""
+Pereaksi Golongan : HCl
+
+Pereaksi Spesifik : NH₄OH
+
+Hasil :
+Hg(NH₂)Cl putih
+Hg hitam
+""")
+
+    st.markdown("---")
+    st.markdown("### ➜ Tambahkan NH₄OH pada Filtrat")
+
+    if st.button("Lihat Hasil NH₄OH"):
+
+        col3, col4 = st.columns(2)
+
+        with col3:
+            st.markdown("### Golongan III")
+            st.write("Al³⁺")
+            st.write("Fe³⁺")
+
+        with col4:
+            st.markdown("### Golongan V")
+            st.write("Ba²⁺")
+            st.write("Sr²⁺")
+            st.write("Ca²⁺")
+
+        pilihan2 = st.selectbox(
+            "Pilih Ion Golongan III atau V",
+            ["Al³⁺", "Fe³⁺", "Ba²⁺", "Sr²⁺", "Ca²⁺"]
+        )
+
+        if pilihan2 == "Al³⁺":
+            st.info("""
+Pereaksi Golongan : NH₄OH
+
+Pereaksi Spesifik : NaOH
+
+Konfirmasi :
+HCl + Na₂CO₃
+
+Hasil :
+Al(OH)₃ putih
+""")
+
+        elif pilihan2 == "Fe³⁺":
+            st.info("""
+Pereaksi Golongan : NH₄OH
+
+Pereaksi Spesifik : KSCN
+
+Hasil :
+Fe(SCN)₃ merah darah
+""")
+
+        elif pilihan2 == "Ba²⁺":
+            st.info("""
+Pereaksi Spesifik :
+K₂CrO₄
+
+Hasil :
+BaCrO₄ kuning
+""")
+
+        elif pilihan2 == "Sr²⁺":
+            st.info("""
+Pereaksi Spesifik :
+Na₂CO₃
+
+Hasil :
+SrCO₃ putih
+""")
+
+        elif pilihan2 == "Ca²⁺":
+            st.info("""
+Pereaksi Spesifik :
+H₂C₂O₄
+
+Hasil :
+CaC₂O₄ putih
+""")
