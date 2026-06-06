@@ -438,3 +438,157 @@ st.markdown("""
     </tbody>
 </table>
 """, unsafe_allow_html=True)
+import streamlit as st
+
+st.set_page_config(
+    page_title="Pemisahan Kation dan Anion",
+    page_icon="🧪"
+)
+
+st.title("🧪 Peta Jalur Reaksi Kualitatif")
+st.subheader("Pemisahan dan Identifikasi Kation-Anion Golongan I–V")
+
+menu = st.sidebar.selectbox(
+    "Pilih Menu",
+    [
+        "Beranda",
+        "Materi",
+        "Skema Pemisahan Kation",
+        "Identifikasi Anion",
+        "Kuis",
+        "Tentang Sistem"
+    ]
+)
+
+# BERANDA
+if menu == "Beranda":
+
+    st.header("Selamat Datang")
+
+    st.write("""
+    Aplikasi ini dibuat untuk membantu mahasiswa memahami
+    pemisahan kation golongan I–V dan identifikasi anion
+    secara lebih mudah dan sistematis.
+    """)
+
+# MATERI
+elif menu == "Materi":
+
+    materi = st.selectbox(
+        "Pilih Materi",
+        ["Kation", "Anion"]
+    )
+
+    if materi == "Kation":
+
+        st.header("Kation")
+
+        st.write("""
+        Kation adalah ion bermuatan positif yang terbentuk karena
+        kehilangan elektron.
+        """)
+
+        st.write("""
+        Golongan I  : Ag⁺, Pb²⁺, Hg₂²⁺
+
+        Golongan II : Cu²⁺, Cd²⁺, Bi³⁺
+
+        Golongan III : Al³⁺, Fe³⁺
+
+        Golongan IV : Zn²⁺, Co²⁺, Ni²⁺, Mn²⁺
+
+        Golongan V : Ba²⁺, Sr²⁺, Ca²⁺
+        """)
+
+    else:
+
+        st.header("Anion")
+
+        st.write("""
+        Anion adalah ion bermuatan negatif yang terbentuk karena
+        menerima elektron.
+        """)
+
+        st.write("""
+        Contoh anion:
+
+        • Cl⁻
+
+        • I⁻
+
+        • CO₃²⁻
+
+        • SO₄²⁻
+        """)
+
+# SKEMA KATION
+elif menu == "Skema Pemisahan Kation":
+
+    st.header("Skema Pemisahan Kation")
+
+    st.write("""
+    Campuran Sampel
+            ↓
+        + HCl
+            ↓
+      Golongan I
+            ↓
+        Filtrat
+            ↓
+       + NH₄OH
+            ↓
+      Golongan III
+            ↓
+       Ba²⁺ Sr²⁺ Ca²⁺
+    """)
+
+# IDENTIFIKASI ANION
+elif menu == "Identifikasi Anion":
+
+    st.header("Identifikasi Anion")
+
+    st.table({
+        "Anion": ["Cl⁻", "I⁻", "CO₃²⁻", "SO₄²⁻"],
+        "Pereaksi": [
+            "HNO₃ + AgNO₃",
+            "HgCl₂ + KI",
+            "HCl",
+            "BaCl₂"
+        ],
+        "Hasil": [
+            "Endapan putih",
+            "Endapan merah",
+            "Terbentuk gas",
+            "Endapan putih"
+        ]
+    })
+
+# KUIS
+elif menu == "Kuis":
+
+    st.header("Kuis")
+
+    jawaban = st.radio(
+        "Kation golongan I diendapkan oleh pereaksi ...",
+        ["NH₄OH", "HCl", "BaCl₂", "K₂CrO₄"]
+    )
+
+    if st.button("Cek Jawaban"):
+
+        if jawaban == "HCl":
+            st.success("Jawaban Benar")
+        else:
+            st.error("Jawaban Salah")
+
+# TENTANG SISTEM
+elif menu == "Tentang Sistem":
+
+    st.header("Tentang Sistem")
+
+    st.write("""
+    Aplikasi ini dibuat sebagai media pembelajaran
+    pemisahan kation dan anion golongan I–V.
+
+    Mata Kuliah:
+    Logika Pemrograman Komputer
+    """)
