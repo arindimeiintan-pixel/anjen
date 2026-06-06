@@ -945,3 +945,121 @@ if st.button("Lihat Hasil"):
         st.write("👍 Baik! Tetap semangat belajar.")
     else:
         st.write("📚 Pelajari kembali materi kation dan anion agar lebih memahami konsepnya.")
+
+import streamlit as st
+
+st.title("🧪 Simulasi Pemisahan Kation Golongan I–V")
+
+st.write("""
+Pilih ion yang ingin dipelajari untuk melihat pereaksi golongan,
+pereaksi spesifik, dan hasil identifikasinya.
+""")
+
+ion = st.selectbox(
+    "Pilih Ion",
+    [
+        "Ag⁺",
+        "Pb²⁺",
+        "Hg₂²⁺",
+        "Al³⁺",
+        "Fe³⁺",
+        "Ba²⁺",
+        "Sr²⁺",
+        "Ca²⁺"
+    ]
+)
+
+if ion == "Ag⁺":
+
+    st.subheader("Ag⁺ (Perak)")
+
+    with st.expander("Pereaksi Golongan"):
+        st.write("HCl encer")
+        st.write("Membentuk endapan AgCl berwarna putih.")
+
+    with st.expander("Pereaksi Spesifik"):
+        st.write("NH₄OH")
+        st.write("Membentuk kompleks Ag(NH₃)₂⁺.")
+
+    with st.expander("Uji Konfirmasi"):
+        st.write("HNO₃")
+        st.write("Terbentuk kembali endapan AgCl putih.")
+
+elif ion == "Pb²⁺":
+
+    st.subheader("Pb²⁺ (Timbal)")
+
+    with st.expander("Pereaksi Golongan"):
+        st.write("HCl encer")
+        st.write("Membentuk endapan PbCl₂ putih.")
+
+    with st.expander("Pereaksi Spesifik"):
+        st.write("K₂CrO₄")
+        st.write("Membentuk PbCrO₄ berwarna kuning.")
+
+elif ion == "Hg₂²⁺":
+
+    st.subheader("Hg₂²⁺ (Merkuri(I))")
+
+    with st.expander("Pereaksi Golongan"):
+        st.write("HCl encer")
+        st.write("Membentuk endapan Hg₂Cl₂ putih.")
+
+    with st.expander("Pereaksi Spesifik"):
+        st.write("NH₄OH")
+        st.write("Membentuk campuran Hg(NH₂)Cl putih dan Hg hitam.")
+
+elif ion == "Al³⁺":
+
+    st.subheader("Al³⁺ (Aluminium)")
+
+    with st.expander("Pereaksi Golongan"):
+        st.write("NH₄OH")
+        st.write("Membentuk endapan Al(OH)₃ putih.")
+
+    with st.expander("Pereaksi Spesifik"):
+        st.write("NaOH")
+        st.write("Endapan larut membentuk Al(OH)₄⁻.")
+
+    with st.expander("Uji Konfirmasi"):
+        st.write("HCl dan Na₂CO₃")
+        st.write("Terbentuk kembali Al(OH)₃ putih.")
+
+elif ion == "Fe³⁺":
+
+    st.subheader("Fe³⁺ (Besi(III))")
+
+    with st.expander("Pereaksi Golongan"):
+        st.write("NH₄OH")
+        st.write("Membentuk endapan Fe(OH)₃ coklat kemerahan.")
+
+    with st.expander("Pereaksi Spesifik"):
+        st.write("KSCN")
+        st.write("Membentuk kompleks Fe(SCN)₃ berwarna merah darah.")
+
+elif ion == "Ba²⁺":
+
+    st.subheader("Ba²⁺ (Barium)")
+
+    with st.expander("Pereaksi Golongan"):
+        st.write("Tidak mengendap dengan HCl maupun NH₄OH.")
+
+    with st.expander("Pereaksi Spesifik"):
+        st.write("K₂CrO₄")
+        st.write("Membentuk BaCrO₄ berwarna kuning.")
+
+elif ion == "Sr²⁺":
+
+    st.subheader("Sr²⁺ (Stronsium)")
+
+    with st.expander("Pereaksi Spesifik"):
+        st.write("Na₂CO₃")
+        st.write("Membentuk SrCO₃ putih.")
+
+elif ion == "Ca²⁺":
+
+    st.subheader("Ca²⁺ (Kalsium)")
+
+    with st.expander("Pereaksi Spesifik"):
+        st.write("H₂C₂O₄")
+        st.write("Membentuk CaC₂O₄ putih.")
